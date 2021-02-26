@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
-import { PersonCard } from "/workspace/react-hello-webapp/src/js/component/personCard.js";
-import { PlanetCard } from "/workspace/react-hello-webapp/src/js/component/planetCard.js";
+import { PersonCard } from "../component/personCard";
+import { PlanetCard } from "../component/planetCard";
 import { Context } from "../store/appContext";
 export const Home = () => {
 	const { store, actions } = useContext(Context);

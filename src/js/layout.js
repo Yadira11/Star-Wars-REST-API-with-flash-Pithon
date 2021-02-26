@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import { Vistapersoncard } from "/workspace/react-hello-webapp/src/js/views/vistapersoncard.js";
+import { Vistapersoncard } from "./views/vistapersoncard";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
