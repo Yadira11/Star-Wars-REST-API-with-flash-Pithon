@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 export const Navbar = () => {
+	const [dropdownOpen, setDropdownOpen] = useState(false);
+	const { store, actions } = useContext(Context);
+	const toggle = () => setDropdownOpen(prevState => !prevState);
+
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -13,10 +18,33 @@ export const Navbar = () => {
 					/>
 				</span>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
+			<div className="mr-5">
+				<Dropdown isOpen={dropdownOpen} toggle={toggle}>
+					<DropdownToggle caret>Dropdown</DropdownToggle>
+					<DropdownMenu>
+						<DropdownItem header> Favoritos</DropdownItem>
+						<DropdownItem>Personajes Favoritos</DropdownItem>
+						{store.favorites.map((favorite, i) => {
+							if (favorite.type == "persona") {
+								return (
+									<div key={i}>
+										<DropdownItem text>{favorite.name}</DropdownItem>
+									</div>
+								);
+							}
+						})}
+						<DropdownItem>Planetas Favoritos</DropdownItem>
+						{store.favorites.map((favorite, i) => {
+							if (favorite.type == "planetas") {
+								return (
+									<div key={i}>
+										<DropdownItem text>{favorite.name}</DropdownItem>
+									</div>
+								);
+							}
+						})}
+					</DropdownMenu>
+				</Dropdown>
 			</div>
 		</nav>
 	);

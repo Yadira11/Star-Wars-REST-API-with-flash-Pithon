@@ -16,23 +16,22 @@ export const Vistaplanetcard = props => {
 					<strong>{nombre}</strong>
 				</h5>
 				<p className="card-text text-white">
-					<strong>Title: &nbsp;</strong>
-					Titulo
+					<strong>title: &nbsp;</strong>
+					title
 					<br />
-					<strong>Gender</strong>
-					Genero
+					<strong>population</strong>
+					population
 					<br />
-					<strong>Height: &nbsp;</strong>
-					altura
+					<strong>climate: &nbsp;</strong>
+					climate
 					<br />
-					<strong>Mass: &nbsp;</strong>
-					Masa
+					<strong>gravity: &nbsp;</strong>
+					gravity
 				</p>
 			</div>
 		</div>
 	);
 };
-
 
 
 

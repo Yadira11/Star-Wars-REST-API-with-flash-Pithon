@@ -36,7 +36,12 @@ export const Home = () => {
 				{store.planets.map((planet, i) => {
 					return (
 						<div key={i}>
-							<PlanetCard />
+							<PlanetCard
+								title={planet.name}
+								population={planet.population}
+								climate={planet.climate}
+								gravity={planet.gravity}
+							/>
 						</div>
 					);
 				})}
