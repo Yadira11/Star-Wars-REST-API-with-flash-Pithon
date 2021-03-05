@@ -7,16 +7,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			loadPerson: async () => {
-				const url = "https://swapi.dev/api/people/";
+				const url = "https://3000-crimson-pig-1afgqwxn.ws-us03.gitpod.io/Personaje";
 				const response = await fetch(url);
 				const data = await response.json();
-				setStore({ peoples: data.results });
+				setStore({ peoples: data });
 			},
+
 			loadPlanet: async () => {
-				const url = "https://swapi.dev/api/planets/";
+				const url = "https://3000-crimson-pig-1afgqwxn.ws-us03.gitpod.io/planetas";
 				const response = await fetch(url);
 				const data = await response.json();
-				setStore({ planets: data.results });
+				setStore({ planets: data });
 			},
 			addFavorite: (name, type) => {
 				const store = getStore();
